@@ -1,5 +1,5 @@
-import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v1.8.7/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v1.8.7/deps.ts";
+import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v1.10.1/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v1.10.1/deps.ts";
 
 type SelectItem = {
   idx: number;

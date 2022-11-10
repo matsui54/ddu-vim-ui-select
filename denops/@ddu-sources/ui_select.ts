@@ -37,6 +37,18 @@ export class Source extends BaseSource<Params> {
     });
   }
 
+  async onEvent(args: {
+    denops: Denops;
+    event: string;
+  }) {
+    if (args.event === "cancel") {
+      await args.denops.call(
+        "luaeval",
+        "require('ddu-vim-ui-select').on_choice({})",
+      );
+    }
+  }
+
   params(): Params {
     return {};
   }

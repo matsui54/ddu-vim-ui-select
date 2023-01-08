@@ -27,9 +27,13 @@ ddu_ui_select.select = function(items, opts, on_choice)
 end
 
 ddu_ui_select.on_choice = function(indexed_items)
-  vim.F.if_nil(save_on_choice, function(_, _)
-  end)(indexed_items.text, indexed_items.idx)
+  local on_choice = save_on_choice
+  -- Note: remove `save_on_choice` before call `on_choice`
+  --       because overwrite `save_on_choice` when recursive call
+  --       and if do it later, breaks on_choice at inner call
   save_on_choice = nil
+  vim.F.if_nil(on_choice, function(_, _)
+  end)(indexed_items.text, indexed_items.idx)
 end
 
 return ddu_ui_select

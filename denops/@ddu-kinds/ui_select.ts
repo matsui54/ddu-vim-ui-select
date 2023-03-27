@@ -3,8 +3,8 @@ import {
   ActionFlags,
   BaseKind,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v2.1.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.1.0/deps.ts";
+} from "https://deno.land/x/ddu_vim@v2.7.0/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v2.7.0/deps.ts";
 import { ActionData } from "../@ddu-sources/ui_select.ts";
 
 type Params = Record<never, never>;

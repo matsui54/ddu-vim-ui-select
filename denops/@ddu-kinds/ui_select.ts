@@ -1,10 +1,10 @@
 import {
   ActionArguments,
   ActionFlags,
-  BaseKind,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v2.8.4/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.8.4/deps.ts";
+} from "jsr:@shougo/ddu-vim@~10.4.0/types";
+import { BaseKind } from "jsr:@shougo/ddu-vim@~10.4.0/kind";
+import type { Denops } from "jsr:@denops/std@7.6.0";
 import { ActionData } from "../@ddu-sources/ui_select.ts";
 
 type Params = Record<never, never>;

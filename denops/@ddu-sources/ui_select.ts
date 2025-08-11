@@ -1,5 +1,6 @@
-import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v2.8.4/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.8.4/deps.ts";
+import { BaseSource } from "jsr:@shougo/ddu-vim@~10.4.0/source";
+import { type Item } from "jsr:@shougo/ddu-vim@~10.4.0/types";
+import type { Denops } from "jsr:@denops/std@7.6.0";
 
 type SelectItem = {
   idx: number;
@@ -16,9 +17,9 @@ export type ActionData = {
 };
 
 export class Source extends BaseSource<Params> {
-  kind = "ui_select";
+  override kind = "ui_select";
 
-  gather(args: {
+  override gather(args: {
     denops: Denops;
     sourceParams: Params;
   }): ReadableStream<Item<ActionData>[]> {
@@ -37,7 +38,7 @@ export class Source extends BaseSource<Params> {
     });
   }
 
-  async onEvent(args: {
+  override async onEvent(args: {
     denops: Denops;
     event: string;
   }) {
